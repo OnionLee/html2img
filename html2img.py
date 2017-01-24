@@ -22,7 +22,7 @@ page_images = [image["src"] for image in soup.findAll("img")]
 count = 0
 for img in page_images:
     count = count + 1
-    split = img.split("?type")
+    split = img.split("?")
     try:
         urllib.request.urlretrieve(split[0], split[0].split('/')[-1])
         print("[{0}/{1}]{2}".format(count, len(page_images), split[0]))
